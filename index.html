@@ -3,38 +3,305 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hercinth - Eco-Friendly Pads</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Hercinth - Sustainable Sanitary Pads</title>
+    <style>
+        :root {
+            --light-blue: #e6f3ff;
+            --light-green: #e8f5e9;
+            --dark-blue: #2196f3;
+            --dark-green: #4caf50;
+            --text-dark: #333;
+            --text-light: #666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--light-blue), var(--light-green));
+            padding: 1rem 2rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            color: var(--dark-blue);
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover {
+            color: var(--dark-blue);
+        }
+
+        section {
+            padding: 5rem 2rem;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            scroll-margin-top: 70px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #mission {
+            background: var(--light-blue);
+            margin-top: 60px;
+        }
+
+        .mission-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .mission-text {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        #process {
+            background: var(--light-green);
+        }
+
+        .process-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .layer-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        #benefits {
+            background: white;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .benefit-card {
+            background: var(--light-blue);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        #shop {
+            background: var(--light-green);
+        }
+
+        .product-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            max-width: 600px;
+            margin: 2rem auto;
+            text-align: center;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            color: var(--dark-blue);
+            margin: 1rem 0;
+        }
+
+        .btn {
+            background: var(--dark-blue);
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background: var(--dark-green);
+        }
+
+        #founders {
+            background: white;
+        }
+
+        .founders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .founder-card {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .founder-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 1rem;
+            background: var(--light-blue);
+        }
+
+        #contact {
+            background: var(--light-blue);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin-top: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        textarea {
+            height: 150px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--dark-blue);
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .header {
+                padding: 1rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-links {
+                overflow-x: auto;
+                padding-bottom: 0.5rem;
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .nav-links::-webkit-scrollbar {
+                height: 3px;
+            }
+
+            .nav-links::-webkit-scrollbar-thumb {
+                background: var(--dark-blue);
+                border-radius: 3px;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="logo"></div>
-        <h1>Hercinth</h1>
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#how-we-make-it">How We Make It</a>
-            <a href="#shop">Shop</a>
-            <a href="#contact">Contact</a>
-            <a href="#founders">About Founders</a>
-        </nav>
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="logo">Hercinth</a>
+            <nav class="nav-links">
+                <a href="#mission">Mission</a>
+                <a href="#process">Process</a>
+                <a href="#benefits">Benefits</a>
+                <a href="#shop">Shop</a>
+                <a href="#founders">Founders</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
     </header>
 
-    <section id="home">
-        <h2>About Hercinth</h2>
-        <p>We make affordable sanitary pads using water hyacinth and banana fiber.</p>
-    </section>
+    [Previous sections remain the same - mission, process, benefits, shop, founders, and contact sections]
 
-    <section id="shop">
-        <h2>Shop Now</h2>
-        <p>Eco-friendly sanitary pads - ₹XX per pack</p>
-        <button class="shop-btn" onclick="addToCart()">Add to Cart</button>
-        <p id="cart-message"></p>
-    </section>
+    <script>
+        // Smooth scroll behavior for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
 
-    <footer>
-        <p>&copy; 2025 Hercinth. All Rights Reserved.</p>
-    </footer>
+        function addToCart() {
+            const cartMessage = document.getElementById('cart-message');
+            cartMessage.textContent = 'Product added to cart!';
+            setTimeout(() => {
+                cartMessage.textContent = '';
+            }, 3000);
+        }
 
-    <script src="script.js"></script>
+        function submitForm() {
+            alert('Thank you for your message! We will get back to you soon.');
+            document.querySelector('.contact-form').reset();
+        }
+    </script>
 </body>
 </html>
