@@ -117,6 +117,29 @@ section {
     border-radius: 10px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
+/* Founder Section */
+#founders {
+    text-align: center;
+    background: var(--white);
+    padding: 3rem 0;
+}
+
+.founder-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.founder-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    display: block;
+    margin-bottom: 15px;
+}
 
 
 /* Responsive Design */
