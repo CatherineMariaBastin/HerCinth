@@ -9,6 +9,25 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // Simple Image Click to Enlarge Feature
+document.querySelectorAll(".product img").forEach(img => {
+    img.addEventListener("click", () => {
+        let overlay = document.createElement("div");
+        overlay.classList.add("overlay");
+
+        let enlargedImg = document.createElement("img");
+        enlargedImg.src = img.src;
+        enlargedImg.classList.add("enlarged");
+
+        overlay.appendChild(enlargedImg);
+        document.body.appendChild(overlay);
+
+        overlay.addEventListener("click", () => {
+            overlay.remove();
+        });
+    });
+});
+
     // Add to Cart functionality
     function addToCart() {
         const cartMessage = document.getElementById("cart-message");
