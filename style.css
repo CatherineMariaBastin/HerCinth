@@ -22,30 +22,6 @@ header {
     padding: 2rem 0;
 }
 
-/* Header */
-header {
-    background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
-    color: var(--white);
-    text-align: center;
-    padding: 1.5rem 0;
-}
-
-.logo-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-}
-
-.logo-container img {
-    height: 50px;  /* Adjust the size as needed */
-    width: auto;
-}
-
-.logo-container h1 {
-    font-size: 2rem;
-    font-weight: bold;
-}
 
 h1, h2 {
     text-align: center;
