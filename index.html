@@ -3,38 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hercinth - Sustainable Sanitary Pads</title>
+    <title>Hercinth - Eco-Friendly Pads</title>
     <style>
-        :root {
-            --light-blue: #e6f3ff;
-            --light-green: #e8f5e9;
-            --dark-blue: #2196f3;
-            --dark-green: #4caf50;
-            --text-dark: #333;
-            --text-light: #666;
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Arial', sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --primary-blue: #B8E2F2;
+            --primary-green: #C5E1A5;
+            --dark-blue: #3498db;
+            --dark-green: #4CAF50;
+            --text-color: #333;
+            --white: #ffffff;
+        }
+
+        html {
             scroll-behavior: smooth;
         }
 
         body {
             line-height: 1.6;
-            color: var(--text-dark);
         }
 
-        .header {
-            background: linear-gradient(135deg, var(--light-blue), var(--light-green));
-            padding: 1rem 2rem;
+        /* Navigation */
+        .navbar {
             position: fixed;
-            width: 100%;
             top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 1rem 0;
         }
 
         .nav-container {
@@ -43,117 +46,206 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 2rem;
         }
 
         .logo {
-            font-size: 1.8rem;
+            font-size: 2rem;
+            font-weight: bold;
             color: var(--dark-blue);
             text-decoration: none;
-            white-space: nowrap;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
-            align-items: center;
+            gap: 2.5rem;
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-dark);
+            color: var(--text-color);
             font-weight: 500;
             transition: color 0.3s;
-            white-space: nowrap;
         }
 
         .nav-links a:hover {
             color: var(--dark-blue);
         }
 
+        /* Sections */
         section {
-            padding: 5rem 2rem;
             min-height: 100vh;
+            padding: 6rem 2rem;
             display: flex;
-            flex-direction: column;
+            align-items: center;
             justify-content: center;
-            scroll-margin-top: 70px;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            width: 100%;
         }
 
+        /* Mission Section */
         #mission {
-            background: var(--light-blue);
-            margin-top: 60px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+            text-align: center;
         }
 
         .mission-content {
             max-width: 800px;
             margin: 0 auto;
-            text-align: center;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
-        .mission-text {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
+        /* Process Section */
         #process {
-            background: var(--light-green);
+            background-color: var(--white);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
         }
 
         .process-card {
-            background: white;
+            background: var(--primary-blue);
             padding: 2rem;
             border-radius: 10px;
-            margin: 2rem 0;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            text-align: center;
+            transition: transform 0.3s;
         }
 
-        .layer-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
+        .process-card:hover {
+            transform: translateY(-5px);
         }
 
+        /* Benefits Section */
         #benefits {
-            background: white;
+            background: linear-gradient(135deg, var(--primary-green), var(--primary-blue));
         }
 
         .benefits-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
         }
 
         .benefit-card {
-            background: var(--light-blue);
+            background: var(--white);
             padding: 2rem;
             border-radius: 10px;
             text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
+        /* Shop Section */
         #shop {
-            background: var(--light-green);
+            background-color: var(--white);
+        }
+
+        .product-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
         }
 
         .product-card {
-            background: white;
+            background: var(--primary-blue);
             padding: 2rem;
-            border-radius: 10px;
-            max-width: 600px;
-            margin: 2rem auto;
+            border-radius: 15px;
             text-align: center;
+            max-width: 400px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1.5rem;
         }
 
         .price {
             font-size: 1.5rem;
             color: var(--dark-blue);
             margin: 1rem 0;
+            font-weight: bold;
+        }
+
+        /* Founders Section */
+        #founders {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-green));
+        }
+
+        .founders-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .founder-card {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .founder-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin: 0 auto 1.5rem;
+            background: var(--primary-blue);
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: var(--white);
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--primary-blue);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
         }
 
         .btn {
@@ -163,7 +255,7 @@
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 1.1rem;
+            font-size: 1rem;
             transition: background-color 0.3s;
         }
 
@@ -171,125 +263,177 @@
             background: var(--dark-green);
         }
 
-        #founders {
-            background: white;
-        }
-
-        .founders-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .founder-card {
-            text-align: center;
-            padding: 2rem;
-        }
-
-        .founder-image {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            margin: 0 auto 1rem;
-            background: var(--light-blue);
-        }
-
-        #contact {
-            background: var(--light-blue);
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-        }
-
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 0.5rem;
-            margin-top: 0.5rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-
-        textarea {
-            height: 150px;
+        /* Headings */
+        h1, h2, h3 {
+            color: var(--text-color);
+            margin-bottom: 1.5rem;
         }
 
         h2 {
+            font-size: 2.5rem;
             text-align: center;
-            margin-bottom: 2rem;
-            color: var(--dark-blue);
         }
 
-        /* Mobile responsiveness */
+        /* Responsive Design */
         @media (max-width: 768px) {
-            .header {
-                padding: 1rem;
-            }
-            
             .nav-container {
                 flex-direction: column;
-                gap: 1rem;
+                padding: 1rem;
             }
 
             .nav-links {
-                overflow-x: auto;
-                padding-bottom: 0.5rem;
-                width: 100%;
-                justify-content: space-between;
+                margin-top: 1rem;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 1rem;
             }
 
-            .nav-links::-webkit-scrollbar {
-                height: 3px;
-            }
-
-            .nav-links::-webkit-scrollbar-thumb {
-                background: var(--dark-blue);
-                border-radius: 3px;
+            .process-grid {
+                grid-template-columns: 1fr;
             }
 
             section {
-                padding: 3rem 1rem;
+                padding: 4rem 1rem;
             }
         }
     </style>
 </head>
 <body>
-    <header class="header">
+    <nav class="navbar">
         <div class="nav-container">
             <a href="#" class="logo">Hercinth</a>
-            <nav class="nav-links">
+            <div class="nav-links">
                 <a href="#mission">Mission</a>
                 <a href="#process">Process</a>
                 <a href="#benefits">Benefits</a>
                 <a href="#shop">Shop</a>
                 <a href="#founders">Founders</a>
                 <a href="#contact">Contact</a>
-            </nav>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    [Previous sections remain the same - mission, process, benefits, shop, founders, and contact sections]
+    <section id="mission">
+        <div class="container">
+            <div class="mission-content">
+                <h2>Our Mission</h2>
+                <p>Every month, over 500 million women worldwide struggle to access safe and affordable menstrual hygiene products. In India alone, nearly 23 million girls drop out of school every year due to period poverty. Meanwhile, invasive water hyacinth clogs our lakes and rivers, harming ecosystems and local economies. What if we could turn this environmental hazard into a life-changing solution?</p>
+                <br>
+                <p>Introducing Hercinth: 100% biodegradable, affordable sanitary pads made from water hyacinth fibers. Sustainable & Effective: Our pads are highly absorbent, antimicrobial, and chemical-free, ensuring safe and comfortable menstrual hygiene. Waste to Wealth: By harvesting water hyacinth, we restore ecosystems, create jobs, and provide women with an eco-friendly alternative.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="process">
+        <div class="container">
+            <h2>How We Make Our Pads</h2>
+            <div class="process-grid">
+                <div class="process-card">
+                    <h3>Top Layer</h3>
+                    <p>Banana fiber – Soft, breathable, and natural.</p>
+                </div>
+                <div class="process-card">
+                    <h3>Core</h3>
+                    <p>Water hyacinth + banana fiber – Highly absorbent and antibacterial.</p>
+                </div>
+                <div class="process-card">
+                    <h3>Bottom Layer</h3>
+                    <p>Water hyacinth + banana fiber sheet with natural wax coating – Leak-proof, biodegradable, and eco-friendly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="benefits">
+        <div class="container">
+            <h2>Why It Works</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <h3>Affordable</h3>
+                    <p>30-40% cheaper than traditional pads</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Eco-Friendly</h3>
+                    <p>100% biodegradable, decomposing in six months</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Restores Ecosystems</h3>
+                    <p>Clean water bodies and create jobs</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Empowers Women</h3>
+                    <p>Provides sustainable menstrual hygiene to rural women</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="shop">
+        <div class="container">
+            <h2>Shop Our Products</h2>
+            <div class="product-container">
+                <div class="product-card">
+                    <img src="/api/placeholder/400/300" alt="Hercinth Sanitary Pads" class="product-image">
+                    <h3>Hercinth Eco-Friendly Sanitary Pads</h3>
+                    <p>30 pads per pack • Vacuum sealed for hygiene</p>
+                    <p class="price">₹60 per pack</p>
+                    <button class="btn" onclick="addToCart()">Add to Cart</button>
+                    <p id="cart-message"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="founders">
+        <div class="container">
+            <h2>Our Founders</h2>
+            <div class="founders-grid">
+                <div class="founder-card">
+                    <div class="founder-image"></div>
+                    <h3>Anna Kurian</h3>
+                    <p>Visionary Leader</p>
+                </div>
+                <div class="founder-card">
+                    <div class="founder-image"></div>
+                    <h3>Catherine Maria Bastin</h3>
+                    <p>Visionary Leader</p>
+                </div>
+                <div class="founder-card">
+                    <div class="founder-image"></div>
+                    <h3>Josna Ann Joshy</h3>
+                    <p>Visionary Leader</p>
+                </div>
+                <div class="founder-card">
+                    <div class="founder-image"></div>
+                    <h3>Neehara Anna Bince</h3>
+                    <p>Visionary Leader</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div class="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" required></textarea>
+                </div>
+                <button class="btn" onclick="submitForm()">Send Message</button>
+            </div>
+        </div>
+    </section>
 
     <script>
-        // Smooth scroll behavior for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-
         function addToCart() {
             const cartMessage = document.getElementById('cart-message');
             cartMessage.textContent = 'Product added to cart!';
@@ -302,6 +446,16 @@
             alert('Thank you for your message! We will get back to you soon.');
             document.querySelector('.contact-form').reset();
         }
+
+        // Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
     </script>
 </body>
 </html>
